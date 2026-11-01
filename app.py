@@ -3,11 +3,14 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from joblib import load
+from pathlib import Path
 import shap
 
-logistic_model = load("models/logistic_model.pkl")
-rf_model = load("models/rf_model.pkl")
-xgb_model = load("models/xgb_model.pkl")
+PROJECT_ROOT = Path(__file__).resolve().parent
+
+logistic_model = load(PROJECT_ROOT / "logistic_model.pkl")
+rf_model = load(PROJECT_ROOT / "rf_model.pkl")
+xgb_model = load(PROJECT_ROOT / "xgb_model.pkl")
 
 tab1, tab2 = st.tabs(["Prediction", "Model Insights"])
 preprocessor = rf_model.named_steps["preprocessor"]

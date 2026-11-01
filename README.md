@@ -27,3 +27,15 @@ The notebook loads and explores the Telco customer data, cleans `TotalCharges`, 
 4. Open `customer_churn_prediction.ipynb` and run the cells.
 
 The notebook expects the CSV file to be in the project directory.
+
+## Run the Streamlit app
+
+The trained model files are stored in the project directory. Start the app from
+the project directory with:
+
+```bash
+streamlit run app.py
+```
+
+The app resolves these model files relative to `app.py`, so it can also be
+started from another working directory.
